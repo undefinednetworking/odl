@@ -1,6 +1,6 @@
 FROM anapsix/alpine-java
-ARG DOWNLOAD_URL
-ENV DOWNLOAD_URL_VAR=$DOWNLOAD_URL
+ARG ODL_VER
+ENV DOWNLOAD_URL_VAR="https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/$ODL_VER/opendaylight-$ODL_VER.tar.gz" 
 RUN echo $DOWNLOAD_URL_VAR >test.txt
 RUN mkdir -p /opt/odl && wget -O /opt/odl/opendaylight.tar.gz \
 	$DOWNLOAD_URL_VAR && \
