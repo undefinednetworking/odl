@@ -1,6 +1,7 @@
+ENV DOWNLOAD_URL
 FROM anapsix/alpine-java
 RUN mkdir -p /opt/odl && wget -O /opt/odl/opendaylight.tar.gz \
-	${DownloadURL} && \
+	$DOWNLOAD_URL && \
 	tar zxf /opt/odl/opendaylight.tar.gz -C /opt/odl
 #ADD ./opendaylight-0.9.1 /opt/opendaylight-0.9.1
 WORKDIR /opt/odl
