@@ -7,3 +7,8 @@ RUN mkdir -p /opt/odl && wget -O /opt/odl/opendaylight.tar.gz \
 	tar zxf /opt/odl/opendaylight.tar.gz -C /opt/odl
 #ADD ./opendaylight-0.9.1 /opt/opendaylight-0.9.1
 WORKDIR /opt/odl
+# 8181 : API
+# 6633 : Openflow
+# 8101 : ODL cli
+
+EXPOSE 8181 6633 8101
